@@ -1,0 +1,25 @@
+TakeGear License
+Copyright (c) 2026 punidamps-cloud (gfxlabs). All rights reserved.
+
+Permission is granted, free of charge, to use TakeGear (the compiled plugin
+binary and this source code) for personal and commercial projects.
+
+You may:
+  - use the plugin in any number of personal or commercial productions;
+  - build the plugin from this source code for your own use;
+  - modify the source code for your own use.
+
+You may not:
+  - redistribute, resell, sublicense or repackage the plugin binary or this
+    source code (modified or not) outside of this repository and its official
+    Releases page;
+  - remove or alter this notice.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY ARISING FROM THE
+USE OF THE SOFTWARE.
+
+Cinema 4D is a trademark of Maxon Computer GmbH. This project is not
+affiliated with or endorsed by Maxon.

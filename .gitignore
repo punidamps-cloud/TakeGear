@@ -1,0 +1,13 @@
+# build artifacts
+_build*/
+dist/
+*.xdl64
+*.pdb
+*.lib
+*.exp
+
+# OS / editor noise
+Thumbs.db
+Desktop.ini
+.vs/
+.idea/
