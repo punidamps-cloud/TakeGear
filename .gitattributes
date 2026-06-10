@@ -1,0 +1,9 @@
+* text=auto
+*.cpp text
+*.h text
+*.md text
+*.txt text
+*.png binary
+*.mp4 binary
+*.zip binary
+*.xdl64 binary
