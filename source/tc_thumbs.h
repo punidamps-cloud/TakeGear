@@ -23,8 +23,8 @@ void TCThumbClear();
 // stops the worker thread (PluginEnd)
 void TCThumbShutdown();
 
-static const cinema::Int32 TC_THUMB_W = 160;
-static const cinema::Int32 TC_THUMB_H = 90;
+static const maxon::Int32 TC_THUMB_W = 160;
+static const maxon::Int32 TC_THUMB_H = 90;
 
 } // namespace tc
 

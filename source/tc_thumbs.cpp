@@ -87,7 +87,7 @@ private:
 		job.iso->ExecutePasses(this->Get(), true, true, true, BUILDFLAGS::NONE);
 
 		RenderData* rd = job.iso->GetActiveRenderData();
-		BaseContainer rdata = rd ? rd->GetData() : BaseContainer();
+		BaseContainer rdata = rd ? rd->GetDataInstanceRef() : BaseContainer();
 		// cheap, thread-safe thumbnail settings: Standard renderer, tiny res
 		rdata.SetInt32(RDATA_RENDERENGINE, RDATA_RENDERENGINE_STANDARD);
 		rdata.SetInt32(RDATA_XRES, TC_THUMB_W);

@@ -6,16 +6,16 @@
 #define TC_VERSION_STRING "1.0.0"
 
 // --- Official plugin IDs (registered range 1068876..1068885) ---
-static const cinema::Int32 ID_TC_COMMAND   = 1068876;
-static const cinema::Int32 ID_TC_SCENEHOOK = 1068877;
+static const maxon::Int32 ID_TC_COMMAND   = 1068876;
+static const maxon::Int32 ID_TC_SCENEHOOK = 1068877;
 // reserved for future plugins of this suite: 1068878..1068885
 
 // disk level of the scene hook serialization
-static const cinema::Int32 TC_DISKLEVEL = 1;
+static const maxon::Int32 TC_DISKLEVEL = 1;
 
 // --- C4D command ids used by Preview playback ---
-static const cinema::Int32 CID_PLAY_FORWARD = 12412;
-static const cinema::Int32 CID_PLAY_STOP    = 12002;
+static const maxon::Int32 CID_PLAY_FORWARD = 12412;
+static const maxon::Int32 CID_PLAY_STOP    = 12002;
 
 // --- Dialog gadget IDs ---
 enum

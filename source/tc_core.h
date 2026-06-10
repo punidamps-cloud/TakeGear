@@ -8,6 +8,7 @@
 #include "c4d_scenehookdata.h"
 #include "lib_takesystem.h"
 
+#include "tc_compat.h"
 #include "tc_ids.h"
 
 namespace tc
@@ -15,10 +16,10 @@ namespace tc
 
 using namespace cinema;
 
-// int -> cinema::String (avoids maxon/cinema operator+ ambiguity in concatenations)
+// int -> String (avoids maxon/cinema operator+ ambiguity in concatenations)
 inline String IStr(Int64 v)
 {
-	return String(maxon::String::IntToString(v));
+	return String::IntToString(v);
 }
 
 // ------------------------------------------------------------------ statuses

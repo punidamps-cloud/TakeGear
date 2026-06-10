@@ -75,23 +75,23 @@ static Bool RegisterTakeControl()
 
 // ------------------------------------------------------------------ module hooks
 
-Bool cinema::PluginStart()
+static Bool TGPluginStart()
 {
 	return RegisterTakeControl();
 }
 
-void cinema::PluginEnd()
+static void TGPluginEnd()
 {
 	tc::TCThumbShutdown();
 }
 
-Bool cinema::PluginMessage(Int32 id, void* data)
+static Bool TGPluginMessage(Int32 id, void* data)
 {
 	switch (id)
 	{
 		case C4DPL_INIT_SYS:
 		{
-			// Take Control ships no string resources: a missing res folder must
+			// TakeGear ships no string resources: a missing res folder must
 			// not prevent the module from loading.
 			g_resource.Init();
 			return true;
@@ -99,3 +99,35 @@ Bool cinema::PluginMessage(Int32 id, void* data)
 	}
 	return false;
 }
+
+#if TC_HAS_CINEMA_NS // 2025+: hooks live in the cinema namespace
+
+Bool cinema::PluginStart()
+{
+	return TGPluginStart();
+}
+void cinema::PluginEnd()
+{
+	TGPluginEnd();
+}
+Bool cinema::PluginMessage(Int32 id, void* data)
+{
+	return TGPluginMessage(id, data);
+}
+
+#else // 2024: classic global hooks
+
+Bool PluginStart()
+{
+	return TGPluginStart();
+}
+void PluginEnd()
+{
+	TGPluginEnd();
+}
+Bool PluginMessage(Int32 id, void* data)
+{
+	return TGPluginMessage(id, data);
+}
+
+#endif

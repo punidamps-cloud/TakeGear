@@ -61,7 +61,15 @@ Think of it as a visual director for Cinema 4D Takes: lay out your Takes as clip
 
 ## Installation
 
-1. Download `TakeGear_vX.X.X_Win_C4D2026.zip` from [Releases](../../releases)
+1. Download the zip **matching your Cinema 4D version** from [Releases](../../releases):
+
+   | Cinema 4D | Asset | Status |
+   |---|---|---|
+   | 2026.x | `TakeGear_vX.X.X_Win_C4D2026.zip` | primary, fully tested |
+   | 2025.x | `TakeGear_vX.X.X_Win_C4D2025.zip` | built against SDK 2025.3 |
+   | 2024.x | `TakeGear_vX.X.X_Win_C4D2024.zip` | built against SDK 2024.5 |
+
+   Plugin binaries are **not** interchangeable between major versions — pick the right one.
 2. Unpack the `TakeGear` folder into your plugins directory, e.g.:
    ```
    %APPDATA%\Maxon\Maxon Cinema 4D 2026_XXXXXXXX\plugins\TakeGear\takegear.xdl64
@@ -69,7 +77,7 @@ Think of it as a visual director for Cinema 4D Takes: lay out your Takes as clip
    (or any folder listed under *Preferences → Plugins*)
 3. Restart Cinema 4D → **Extensions → TakeGear**
 
-Requires **Cinema 4D 2026.2+ on Windows**. macOS can be built from source (the project targets Win64 + OSX).
+Windows only for now; macOS can be built from source (the project targets Win64 + OSX). One shared codebase covers 2024/2025/2026 via `source/tc_compat.h`.
 
 ---
 
@@ -145,10 +153,13 @@ TakeGear is a single C++ module for the Cinema 4D 2026 SDK (Cinema API).
    ```
 4. The plugin lands in `sdk/_build/bin/Release/plugins/takegear/takegear.xdl64`
 
+For **2024** the SDK uses the classic Project Tool instead of CMake: copy this repo into `sdk/plugins/takegear`, run the project tool, then build `takegear.vcxproj` with `/p:PlatformToolset=v143` and an `ExceptionHandling=Sync` override (modern MSVC STL requires it). Trim `APIS` to `cinema.framework;core.framework`.
+
 Source layout:
 
 ```
 project/projectdefinition.txt   SDK module definition (ModuleId io.gfxlabs.takegear)
+source/tc_compat.h              2024/2025/2026 compatibility layer
 source/tc_ids.h                 plugin & gadget IDs (official IDs 1068876/1068877)
 source/tc_core.*                data model, scene hook (persistence + viewport HUD),
                                 take engine, camera tools, render ops, WAV parser, CSV
