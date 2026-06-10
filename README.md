@@ -1,6 +1,6 @@
 # TakeGear
 
-**Timeline-driven Take switcher for Cinema 4D 2026** — an editorial-style multitrack sequencer that decides which Take is active at which point in time, while staying 100% inside Cinema 4D's native Take and render workflow.
+**Timeline-driven Take switcher for Cinema 4D 2024 / 2025 / 2026** — an editorial-style multitrack sequencer that decides which Take is active at which point in time, while staying 100% inside Cinema 4D's native Take and render workflow.
 
 [Русская версия →](README.ru.md)
 
